@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bruce Ybañez | About Me</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <header id="sidebar" class="eightbit">
+        <div class="header-top">
+            <button class="toggle-sidebar" onclick="toggleSidebar()"><i class="fas fa-bars"></i></button>
+            <h1 class="logo">PORTFOLIO</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="WEBSITE.html"><i class="fas fa-home"></i> <span>Home</span></a></li>
+                <li><a href="about.html"><i class="fas fa-user"></i> <span>About</span></a></li>
+                <li><a href="skills.html"><i class="fas fa-star"></i> <span>Skills</span></a></li>
+                <li><a href="projects.html"><i class="fas fa-folder"></i> <span>Projects</span></a></li>
+                <li><a href="contact.html"><i class="fas fa-envelope"></i> <span>Contact</span></a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main id="main-content">
+    <!-- About Me -->
+    <section id="about" class="batman">
+        <h2>About Me</h2>
+        <p>
+        Born on December 14, 2005, in Naic, Cavite, I am currently residing in Brgy. Agus-Os, Indang, Cavite. I completed my elementary education at Cavite State University – Child Development Center, graduating with honors. I pursued both my junior and senior high school education at Cavite State University – Laboratory Science High School (CvSU-LSHS) under the Academic Track specializing in Science, Technology, Engineering, and Mathematics (STEM). 
+        <p>
+        During my junior high school years, I actively participated in student organizations and leadership roles, serving as President of Barangay Sandigan (2022–2023) and Grade 10 Representative of the Robotics Club (2022–2023). In senior high school, I continued my involvement in leadership and was elected as Treasurer of the Robotics Club for the academic year 2023–2024, and later as President for the academic year 2024–2025. In addition to academic and organizational activities, I also participated in extracurricular events, including the annual Battle of the Bands during CvSU-LSHS acquaintance parties.
+        <p>
+        I spend most of my free time on the internet, driving around with friends, or just sleeping at home.
+        </p>
+        
+        <div class="gallery-container">
+            <div class="gallery-grid-horizontal">
+                <img class="gallery-image" src="../007812e1-4171-4e4f-acbf-4960587f5ea9.jpg" onclick="openModal(this)">
+                <img class="gallery-image" src="../2daa240d-553e-4c4f-9621-9fbb38cf2247.jpg" onclick="openModal(this)">
+                <img class="gallery-image" src="../65d0f253-c0dc-4e68-a34e-6bc0dedab2df.jpg" onclick="openModal(this)">
+                <img class="gallery-image" src="../bd808c9e-b0f2-41fa-8d2c-5aa88930a32c.jpg" onclick="openModal(this)">
+            </div>
+        </div>
+    </section>
+    </main>
+
+    <script>
+        function toggleSidebar() {
+            const sidebar = document.getElementById('sidebar');
+            const main = document.getElementById('main-content');
+            
+            sidebar.classList.toggle('minimized');
+            main.classList.toggle('minimized');
+        }
+
+        function openModal(img) {
+            const modal = document.getElementById('imageModal');
+            const modalImg = document.getElementById('modalImage');
+            modalImg.src = img.src;
+            modal.classList.add('active');
+        }
+
+        function closeModal() {
+            const modal = document.getElementById('imageModal');
+            modal.classList.remove('active');
+        }
+
+        window.addEventListener('load', function() {
+            const modal = document.getElementById('imageModal');
+            const closeBtn = document.querySelector('.close');
+
+            closeBtn.addEventListener('click', function(e) {
+                e.stopPropagation();
+                closeModal();
+            });
+
+            modal.addEventListener('click', function(e) {
+                if (e.target === modal) {
+                    closeModal();
+                }
+            });
+
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape') {
+                    closeModal();
+                }
+            });
+        });
+    </script>
+
+    <div id="imageModal" class="modal">
+        <span class="close" onclick="closeModal()">×</span>
+        <img class="modal-image" id="modalImage" src="" alt="Enlarged Image">
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bruce Ybañez | Skills</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <header id="sidebar" class="eightbit">
+        <button class="toggle-sidebar" onclick="toggleSidebar()"><i class="fas fa-bars"></i></button>
+        <nav>
+            <h1 class="logo">PORTFOLIO</h1>
+            <ul>
+                <li><a href="WEBSITE.html"><i class="fas fa-home"></i> <span>Home</span></a></li>
+                <li><a href="about.html"><i class="fas fa-user"></i> <span>About</span></a></li>
+                <li><a href="skills.html"><i class="fas fa-star"></i> <span>Skills</span></a></li>
+                <li><a href="projects.html"><i class="fas fa-folder"></i> <span>Projects</span></a></li>
+                <li><a href="contact.html"><i class="fas fa-envelope"></i> <span>Contact</span></a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main id="main-content">
+    <section id="skills">
+        <h2>Skills</h2>
+        <div class="skills-wrapper">
+            <div class="skills-container">
+                <div class="skill-box">
+                    <h3>TECHNICAL SKILLS</h3>
+                    <ul>
+                        <li>HTML</li>
+                        <li>CSS</li>
+                        <li>Python</li>
+                        <li>Arduino</li>
+                        <li>JavaScript</li>
+                    </ul>
+                </div>
+
+                <div class="skill-box">
+                    <h3>SOFT SKILLS</h3>
+                    <ul>
+                        <li>Communication</li>
+                        <li>Teamwork</li>
+                        <li>Problem Solving</li>
+                        <li>Time Management</li>
+                        <li>Adaptability</li> 
+                        <li>Leadership</li>     
+                    </ul>
+                </div>
+            </div>
+
+            <div class="gallery-container">
+                <div class="gallery-grid-collage">
+                    <img src="../609899551_1922006135369099_3058569106141456777_n.jpg" alt="Gallery Image 1" class="gallery-image" onclick="openModal(this)">
+                    <img src="../IMG_3559.jpeg" alt="Gallery Image 2" class="gallery-image" onclick="openModal(this)">
+                    <img src="../IMG_3562.jpeg" alt="Gallery Image 3" class="gallery-image" onclick="openModal(this)">
+                </div>
+            </div>
+        </div>
+    </section>
+    </main>
+
+    <div id="imageModal" class="modal">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <img class="modal-image" id="modalImage" src="" alt="Enlarged Image">
+    </div>
+
+    <script>
+        function toggleSidebar() {
+            const sidebar = document.getElementById('sidebar');
+            const main = document.getElementById('main-content');
+            
+            sidebar.classList.toggle('minimized');
+            main.classList.toggle('minimized');
+        }
+
+        function openModal(img) {
+            const modal = document.getElementById('imageModal');
+            const modalImg = document.getElementById('modalImage');
+            if (modal && modalImg) {
+                modalImg.src = img.src;
+                modal.style.display = 'flex';
+                modal.classList.add('active');
+            }
+        }
+
+        function closeModal() {
+            const modal = document.getElementById('imageModal');
+            if (modal) {
+                modal.style.display = 'none';
+                modal.classList.remove('active');
+            }
+        }
+
+        // Setup modal listeners when page loads
+        window.addEventListener('load', function() {
+            const modal = document.getElementById('imageModal');
+            const closeBtn = document.querySelector('.close');
+            
+            if (modal) {
+                modal.addEventListener('click', function(e) {
+                    if (e.target === modal) {
+                        closeModal();
+                    }
+                });
+                
+                if (closeBtn) {
+                    closeBtn.addEventListener('click', function(e) {
+                        e.stopPropagation();
+                        closeModal();
+                    });
+                }
+            }
+        });
+
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                closeModal();
+            }
+        });
+    </script>
+
+</body>
+</html>

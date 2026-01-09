@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bruce Ybañez | Projects</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <header id="sidebar" class="eightbit">
+        <button class="toggle-sidebar" onclick="toggleSidebar()"><i class="fas fa-bars"></i></button>
+        <nav>
+            <h1 class="logo">PORTFOLIO</h1>
+            <ul>
+                <li><a href="WEBSITE.html"><i class="fas fa-home"></i> <span>Home</span></a></li>
+                <li><a href="about.html"><i class="fas fa-user"></i> <span>About</span></a></li>
+                <li><a href="skills.html"><i class="fas fa-star"></i> <span>Skills</span></a></li>
+                <li><a href="projects.html"><i class="fas fa-folder"></i> <span>Projects</span></a></li>
+                <li><a href="contact.html"><i class="fas fa-envelope"></i> <span>Contact</span></a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main id="main-content">
+    <section id="projects">
+        <h2>Projects</h2>
+        <div class="projects-container">
+            <div class="project-card-left">
+                <h3>Arduino Weighing Scoop</h3>
+                <img src="../1a2b480e-5f79-42bc-88fb-586508ac855b.jpg" alt="Arduino Weighing Scoop" class="project-image">
+                <p>
+                    A rice scoop with an integrated weighing scale using
+                    Arduino Uno and HX711 sensor.
+                </p>
+                <a href="../5_Matatag-CHAP-1-5-V2.2 (1).pdf" target="_blank" class="project-link">Learn More</a>
+            </div>
+            <div class="project-card-right">
+                <p>
+                    This study was conducted from September 2024 to April 2025 at Cavite State University - Laboratory Science High School. The researchers aimed to design and develop the Smart Utility for Precision and Accuracy (S.U.P.A.) Scooper, an enhanced grain scoop with integrated weighing scale, calculation, and accumulation functions.
+                </p>
+                <p>
+                    Addressing issues in traditional rice retailing methods, this innovation provides a solution that ensures precise measurement and transaction efficiency. The prototype features an Arduino Uno, load cell, and LCD display, with a frame constructed from stainless steel.
+                </p>
+                <p>
+                    Testing results indicated high accuracy within a 3.05% margin and excellent precision across varying loads. The device maintained satisfactory battery life under simulated daily usage, and economic analysis revealed its affordability and potential return on investment.
+                </p>
+                <p>
+                    While the researchers concluded the design is feasible, they noted it is impractical for commercial use in its current state. They recommended exploring alternative frame and internal designs without sacrificing efficiency, and conducting additional calibration tests to further improve durability, accuracy, and precision.
+                </p>
+            </div>
+        </div>
+    </section>
+    </main>
+
+    <script>
+        function toggleSidebar() {
+            const sidebar = document.getElementById('sidebar');
+            const main = document.getElementById('main-content');
+            
+            sidebar.classList.toggle('minimized');
+            main.classList.toggle('minimized');
+        }
+    </script>
+
+</body>
+</html>
